@@ -15,21 +15,21 @@ def thread_func(nome):
 
         print(f"{nome} entrou na região crítica")
         valorAtual = contador
-        time.sleep(0.1) 
+        time.sleep(2.5) 
         contador = valorAtual + 1
         print(f"{nome} saiu da região crítica, contador = {contador}")
 
         rcOcupada = False
 
-        time.sleep(0.1)
+        time.sleep(2.5)
 
-t1 = threading.Thread(target=thread_func, args=("Thread 1",))
-t2 = threading.Thread(target=thread_func, args=("Thread 2",))
+processoA = threading.Thread(target=thread_func, args=("Thread 1",))
+processoB = threading.Thread(target=thread_func, args=("Thread 2",))
 
-t1.start()
-t2.start()
+processoA.start()
+processoB.start()
 
-t1.join()
-t2.join()
+processoA.join()
+processoB.join()
 
 print("Valor final do contador:", contador)
