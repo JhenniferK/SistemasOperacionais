@@ -4,7 +4,7 @@ import time
 contador = 0
 rcOcupada = False
 
-def thread_func(nome):
+def thread(nome):
     global contador, rcOcupada
 
     for i in range(5):
@@ -23,8 +23,8 @@ def thread_func(nome):
 
         time.sleep(2.5)
 
-processoA = threading.Thread(target=thread_func, args=("Thread 1",))
-processoB = threading.Thread(target=thread_func, args=("Thread 2",))
+processoA = threading.Thread(target=thread, args=("Processo A",))
+processoB = threading.Thread(target=thread, args=("Processo B",))
 
 processoA.start()
 processoB.start()
