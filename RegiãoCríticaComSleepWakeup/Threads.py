@@ -19,10 +19,10 @@ def regiaoCritica(threadID):
         recursoOcup = True
         print(f"Thread - {threadID} entrou na região crítica.")
 
-    valor_anterior = recursoComp
-    tempo_processamento = random.uniform(0.5, 2.0)
-    time.sleep(tempo_processamento)
-    recursoComp = valor_anterior + 1
+    valorAnterior = recursoComp
+    tempoProcessamento = random.uniform(0.5, 2.0)
+    time.sleep(tempoProcessamento)
+    recursoComp = valorAnterior + 1
 
     with condicao:
         recursoOcup = False
