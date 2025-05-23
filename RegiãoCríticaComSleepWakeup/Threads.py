@@ -31,6 +31,7 @@ def regiaoCritica(threadID):
         condicao.notify()
 
 threads = []
+
 for i in range(5):
     t = threading.Thread(target=regiaoCritica, args=(i,))
     threads.append(t)
